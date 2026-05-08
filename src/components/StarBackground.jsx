@@ -43,18 +43,30 @@ export const StarBackground = () => {
     }
 
     const createMeteors = () => {
-        const numberOfMeteors = 5;
+        const numberOfFastMeteors = 4;
+        const numberOfSlowMeteors = 2;
 
         const newMeteors = [];
 
-        for (let i = 0; i < numberOfMeteors; i++) {
+        for (let i = 0; i < numberOfFastMeteors; i++) {
             newMeteors.push({
                 id: i,
                 width: Math.random() * 50 + 50,
                 height: Math.random() * 2 + 2,
                 x: Math.random() * 100,
-                y: Math.random() * 100,
-                animationDuration: Math.random() * 4 + 2,
+                y: Math.random() * 40,
+                animationDuration: Math.random() * 4 + 4,
+                animationDelay: Math.random() ,
+            });
+        }
+        for (let i = 0; i < numberOfSlowMeteors; i++) {
+            newMeteors.push({
+                id: numberOfFastMeteors + i,
+                width: Math.random() * 50 + 30,
+                height: Math.random() * 2 + 2,
+                x: Math.random() * 100, 
+                y: Math.random() * 60,
+                animationDuration: Math.random() * 4 + 6,
                 animationDelay: Math.random() ,
             });
         }
@@ -90,7 +102,7 @@ export const StarBackground = () => {
                         top: `${meteor.y}%`,
                         animationDuration: `${meteor.animationDuration}s`,
                         animationDelay: `${meteor.animationDelay}s`,
-                        opacity: 0
+                        opacity: 0,
                     }}
                 />
             ))}

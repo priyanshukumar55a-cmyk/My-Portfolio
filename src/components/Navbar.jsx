@@ -12,6 +12,7 @@ const navItems = [
 export const Navbar = () => {
     const [isScrolled, setIsScrolled] = useState(false);
     const [isMenuOpen, setIsMenuOpen] = useState(false);
+    const [activeSection, setActiveSection] = useState("Home");
 
     useEffect(() => {
         const handleScroll = () => {
@@ -35,8 +36,14 @@ export const Navbar = () => {
                         {navItems.map((item) => (
                             <a
                                 key={item.href}
+                                onMouseEnter={() => {
+                                    document.getElementById(item.href.substring(1))?.scrollIntoView({
+                                        behavior: "smooth",
+                                    });
+                                }}
                                 href={item.href}
-                                className="text-sm font-medium hover:text-blue-500 transition-colors duration-300"
+                                className={cn("text-sm font-medium transition-colors duration-300", activeSection === item.name ? "text-blue-500" : "hover:text-blue-500")}
+                                onClick={() => setActiveSection(item.name)}
                             >
                                 {item.name}
                             </a>
@@ -50,8 +57,11 @@ export const Navbar = () => {
                                 <a
                                     key={item.href}
                                     href={item.href}
-                                    className="text-sm font-medium hover:text-blue-500 transition-colors duration-300"
-                                    onClick={() => setIsMenuOpen(false)}
+                                    className={cn("text-sm font-medium transition-colors duration-300", activeSection === item.name ? "text-blue-500" : "hover:text-blue-500")}
+                                    onClick={() => {
+                                        setActiveSection(item.name);
+                                        setIsMenuOpen(false);
+                                    }}
                                 >
                                     {item.name}
                                 </a>
