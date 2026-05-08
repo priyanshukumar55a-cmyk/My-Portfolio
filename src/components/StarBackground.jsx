@@ -54,7 +54,7 @@ export const StarBackground = () => {
                 height: Math.random() * 2 + 2,
                 x: Math.random() * 100,
                 y: Math.random() * 100,
-                animationDuration: Math.random() * 2 + 2,
+                animationDuration: Math.random() * 4 + 2,
                 animationDelay: Math.random() ,
             });
         }

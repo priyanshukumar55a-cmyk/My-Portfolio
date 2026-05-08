@@ -27,7 +27,7 @@ export const Navbar = () => {
 
     return (
         <nav className={cn("fixed top-0 w-full z-40 transition-all duration-300", isScrolled ? "bg-background/80 backdrop-blur-sm shadow-md" : "bg-transparent")}>
-            <div className="container mx-auto px-8 py-7">
+            <div className="container mx-auto px-8 py-5">
                 <div className="flex items-center justify-between px-2">
 
                     <div className="text-2xl font-bold text-glow">My <span className="text-blue-500">Portfolio</span></div>

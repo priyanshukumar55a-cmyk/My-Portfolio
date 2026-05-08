@@ -25,7 +25,7 @@ export const HeroSection = () => {
           <div className="opacity-0 animate-fade-in-delay-3">
             <a
               href="#projects"
-              className="cosmic-button inline-block mt-4 px-6 py-3 text-sm font-medium text-white rounded-md transition-colors duration-300 hover:bg-blue-600"
+              className="cosmic-button inline-block mt-4 px-6 py-3 text-sm font-medium text-white rounded-md transition-colors duration-300 bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
               View My Work
             </a>
