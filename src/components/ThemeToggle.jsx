@@ -28,10 +28,8 @@ export const ThemeToggle = () => {
   };
 
   return (
-    <div className="theme-toggle">
-        <button className={cn("fixed max-sm:hidden top-5 right-8 z-50 p-2 rounded-full transition-colors duration-300 focus:outline-hidden cursor-pointer")} onClick={toggleTheme}>
-            {isdarkMode ? <span className="text-2xl">🌞</span> : <span className="text-2xl">🌜</span>}
-        </button>
-    </div>
+    <button className="p-2 rounded-full transition-colors duration-300 focus:outline-hidden cursor-pointer z-50" onClick={toggleTheme}>
+        {isdarkMode ? <span className="text-2xl">🌞</span> : <span className="text-2xl">🌜</span>}
+    </button>
   )
 }

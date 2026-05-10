@@ -1,5 +1,6 @@
-import { use, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
     { name: "Home", href: "#hero" },
@@ -26,13 +27,26 @@ export const Navbar = () => {
         };
     }, []);
 
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "auto";
+        }
+
+        return () => {
+            document.body.style.overflow = "auto";
+        };
+    }, [isMenuOpen]);
+
     return (
         <nav className={cn("fixed top-0 w-full z-40 transition-all duration-300", isScrolled ? "bg-background/80 backdrop-blur-sm shadow-md" : "bg-transparent")}>
-            <div className="container mx-auto px-8 py-5">
-                <div className="flex items-center justify-between px-2">
+            <div className="container mx-auto px-4 py-2">
+                <div className="flex items-center justify-between px-2 ">
 
                     <div className="text-2xl font-bold text-glow">My <span className="text-blue-500">Portfolio</span></div>
-                    <div className="space-x-6 hidden md:flex">
+                    <div className="flex items-center gap-6">
+                        <div className="space-x-6 hidden md:flex ">
                         {navItems.map((item) => (
                             <a
                                 key={item.href}
@@ -40,6 +54,7 @@ export const Navbar = () => {
                                     document.getElementById(item.href.substring(1))?.scrollIntoView({
                                         behavior: "smooth",
                                     });
+                                    setActiveSection(item.name);
                                 }}
                                 href={item.href}
                                 className={cn("text-sm font-medium transition-colors duration-300", activeSection === item.name ? "text-blue-500" : "hover:text-blue-500")}
@@ -48,25 +63,8 @@ export const Navbar = () => {
                                 {item.name}
                             </a>
                         ))}
-                    </div>
-                        
-                    {/* Mobile Menu Button */}
-                    <div className={cn("fixed inset-0 bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-all duration-300 md:hidden", isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none')}>
-                        <div className="space-y-6 flex flex-col items-center">
-                            {navItems.map((item) => (
-                                <a
-                                    key={item.href}
-                                    href={item.href}
-                                    className={cn("text-sm font-medium transition-colors duration-300", activeSection === item.name ? "text-blue-500" : "hover:text-blue-500")}
-                                    onClick={() => {
-                                        setActiveSection(item.name);
-                                        setIsMenuOpen(false);
-                                    }}
-                                >
-                                    {item.name}
-                                </a>
-                            ))}
                         </div>
+                            <ThemeToggle />
                     </div>
 
                     <div className="md:hidden">
@@ -74,6 +72,24 @@ export const Navbar = () => {
                             {isMenuOpen ? <span className="text-2xl">✖</span> : <span className="text-2xl">☰</span>}
                         </button>
                     </div>
+                </div>
+            </div>
+
+            <div className={cn("fixed inset-0 h-screen overflow-hidden bg-background/95 backdrop-blur-md z-40 flex flex-col items-center justify-center transition-all duration-300 md:hidden", isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none')}>
+                <div className="space-y-6 flex flex-col items-center">
+                    {navItems.map((item) => (
+                        <a
+                            key={item.href}
+                            href={item.href}
+                            className={cn("text-sm font-medium transition-colors duration-300", activeSection === item.name ? "text-blue-500" : "hover:text-blue-500")}
+                            onClick={() => {
+                                setActiveSection(item.name);
+                                setIsMenuOpen(false);
+                            }}
+                        >
+                            {item.name}
+                        </a>
+                    ))}
                 </div>
             </div>
         </nav>

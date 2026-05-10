@@ -1,4 +1,5 @@
 import { ArrowBigDown } from "lucide-react"
+import { TypewriterText } from "./TypewriterText"
 
 export const HeroSection = () => {
   return (
@@ -9,11 +10,9 @@ export const HeroSection = () => {
 
           <h1 className="text-5xl font-bold">
             <span className="opacity-0 animate-fade-in">
-              Hi, I'm
+              Hi, I'm{" "}
             </span>
-            <span className="text-blue-500 opacity-0 animate-fade-in-delay-1">
-              {" "}Priyanshu Kumar
-            </span>
+            <TypewriterText />
           </h1>
 
           <p className="md:text-xl text-muted-foreground max-w-2xl mx-auto opacity-0 animate-fade-in-delay-2">
@@ -25,7 +24,7 @@ export const HeroSection = () => {
           <div className="opacity-0 animate-fade-in-delay-3">
             <a
               href="#projects"
-              className="cosmic-button inline-block mt-4 px-6 py-3 text-sm font-medium text-white rounded-md transition-colors duration-300 bg-blue-600 hover:bg-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              className="cosmic-button bg-blue-500 text-white px-6 py-3 rounded-md text-lg font-medium transition-transform duration-300 hover:scale-105"
             >
               View My Work
             </a>
