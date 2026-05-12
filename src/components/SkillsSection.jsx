@@ -42,7 +42,7 @@ export const SkillsSection = () => {
     const filteredSkills = activeCategory === "All" ? skills : skills.filter(skill => skill.category === activeCategory);
 
     return (
-        <section id="skills" className="py-12">
+        <section id="skills" className="py-15">
             <div className="container">
                 <h2 className="text-3xl font-bold text-center mb-8">My <span className="text-primary">Skills</span></h2>
 

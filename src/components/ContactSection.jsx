@@ -99,28 +99,166 @@ export const ContactSection = () => {
         </div>
 
         {/* Message Form Section */}
-        <div className="mt-16 max-w-2xl mx-auto">
-            <div className="bg-gray-800 border border-border p-8 rounded-lg ">
-                <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
+        <div className="mt-24 max-w-3xl mx-auto px-4">
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+            <div
+                className="
+                relative
+                overflow-hidden
+                rounded-3xl
+                border border-border
+                bg-card/60
+                backdrop-blur-xl
+                p-8 md:p-10
+                card-hover
+                "
+            >
+
+                {/* Glow Effect */}
+                <div
+                    className="
+                    absolute
+                    inset-0
+                    bg-linear-to-br
+                    from-primary/10
+                    via-transparent
+                    to-primary/5
+                    pointer-events-none
+                    "
+                />
+
+                {/* Heading */}
+                <div className="relative z-10 mb-8">
+                    <h3 className="text-3xl md:text-4xl font-bold text-glow">
+                        Send Me a Message
+                    </h3>
+
+                    <p className="text-muted-foreground mt-3 text-sm md:text-base">
+                        Have a project, collaboration idea, or just want to connect?
+                        Feel free to reach out 🚀
+                    </p>
+                </div>
+
+                {/* Form */}
+                <form onSubmit={handleSubmit} className="relative z-10 space-y-6">
+
+                    {/* Name */}
                     <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-foreground mb-2">Your Name</label>
-                        <input type="text" placeholder="Enter Your Name..." id="name" name="name" required className="w-full px-4 py-2 rounded-md border border-input bg-background/50 text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
-                    </div>
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">Your Email</label>
-                        <input type="email" placeholder="Enter Your Email..." id="email" name="email" required className="w-full px-4 py-2 rounded-md border border-input bg-background/50 text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-primary transition-colors" />
-                    </div>
-                    <div>
-                        <label htmlFor="message" className="block text-sm font-medium text-foreground mb-2">Your Message</label>
-                        <textarea placeholder="Hello, I'd like to talk about..." id="message" name="message" required className="w-full px-4 py-2 rounded-md border border-input bg-background/50 text-foreground placeholder:text-muted-foreground focus:outline-hidden focus:ring-2 focus:ring-primary focus:border-primary transition-colors resize-none h-32" />
+                        <label
+                            htmlFor="name"
+                            className="block text-sm font-medium text-muted-foreground mb-2"
+                        >
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            placeholder="Enter your name..."
+                            id="name"
+                            name="name"
+                            required
+                            className="
+                            w-full
+                            px-5 py-3
+                            rounded-xl
+                            border border-border
+                            bg-background/40
+                            text-foreground
+                            placeholder:text-muted-foreground/70
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-primary
+                            focus:border-primary
+                            transition-all duration-300
+                            "
+                        />
                     </div>
 
-                    <button type="submit" className={cn("cosmic-button w-full flex items-center justify-center gap-2 p-3")}>
-                        Send Message<Send size={22}/>
+                    {/* Email */}
+                    <div>
+                        <label
+                            htmlFor="email"
+                            className="block text-sm font-medium text-muted-foreground mb-2"
+                        >
+                            Your Email
+                        </label>
+
+                        <input
+                            type="email"
+                            placeholder="Enter your email..."
+                            id="email"
+                            name="email"
+                            required
+                            className="
+                            w-full
+                            px-5 py-3
+                            rounded-xl
+                            border border-border
+                            bg-background/40
+                            text-foreground
+                            placeholder:text-muted-foreground/70
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-primary
+                            focus:border-primary
+                            transition-all duration-300
+                            "
+                        />
+                    </div>
+
+                    {/* Message */}
+                    <div>
+                        <label
+                            htmlFor="message"
+                            className="block text-sm font-medium text-muted-foreground mb-2"
+                        >
+                            Your Message
+                        </label>
+
+                        <textarea
+                            placeholder="Hello, I'd like to talk about..."
+                            id="message"
+                            name="message"
+                            required
+                            className="
+                            w-full
+                            h-36
+                            px-5 py-3
+                            rounded-xl
+                            border border-border
+                            bg-background/40
+                            text-foreground
+                            placeholder:text-muted-foreground/70
+                            focus:outline-none
+                            focus:ring-2
+                            focus:ring-primary
+                            focus:border-primary
+                            transition-all duration-300
+                            resize-none
+                            "
+                        />
+                    </div>
+
+                    {/* Button */}
+                    <button
+                        type="submit"
+                        className="
+                        cosmic-button
+                        w-full
+                        flex
+                        items-center
+                        justify-center
+                        gap-3
+                        py-3
+                        text-base
+                        "
+                    >
+                        Send Message
+                        <Send size={20} />
                     </button>
+
                 </form>
+
             </div>
         </div>
     </section>

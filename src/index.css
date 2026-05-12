@@ -25,7 +25,7 @@
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-10px);
+      transform: translateY(-20px);
     }
   }
   @keyframes pulse-subtle {
@@ -164,7 +164,7 @@
   @apply absolute rounded-full;
   background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.7) 70%, rgba(255,255,255,1) 100%);
 
-  box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.7);
 }
 
 .meteor {
@@ -175,7 +175,7 @@
   border-radius: 9999px;
   background: linear-gradient(90deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.8) 70%, rgba(255,255,255,1) 100%);
 
-  box-shadow: 0 0 30px 5px rgba(255, 255, 255, 0.9);
+  box-shadow: 0 0 20px 3px rgba(255, 255, 255, 0.7);
   transform: rotate(90deg);
 }
 

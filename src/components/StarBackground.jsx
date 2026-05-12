@@ -24,7 +24,7 @@ export const StarBackground = () => {
     }, []);
 
     const createStars = () => {
-        const numberOfStars = Math.floor(window.innerWidth * window.innerHeight / 10000);
+        const numberOfStars = Math.floor(window.innerWidth * window.innerHeight / 17000);
 
         const newStars = [];
 
@@ -34,7 +34,7 @@ export const StarBackground = () => {
                 size: Math.random() * 3 + 1,
                 x: Math.random() * 100,
                 y: Math.random() * 100,
-                opacity: Math.random() * 0.8 + 0.2,
+                opacity: Math.random() * 0.6 + 0.2,
                 delay: Math.random() * 5,
                 animationDuration: Math.random() * 5 + 5
             });
@@ -43,7 +43,7 @@ export const StarBackground = () => {
     }
 
     const createMeteors = () => {
-        const numberOfFastMeteors = 4;
+        const numberOfFastMeteors = 3;
         const numberOfSlowMeteors = 2;
 
         const newMeteors = [];
@@ -51,11 +51,11 @@ export const StarBackground = () => {
         for (let i = 0; i < numberOfFastMeteors; i++) {
             newMeteors.push({
                 id: i,
-                width: Math.random() * 50 + 50,
+                width: Math.random() * 40 + 40,
                 height: Math.random() * 2 + 2,
                 x: Math.random() * 100,
-                y: Math.random() * 40,
-                animationDuration: Math.random() * 4 + 4,
+                y: Math.random() * 20,
+                animationDuration: Math.random() * 2 + 3,
                 animationDelay: Math.random() ,
             });
         }
@@ -66,7 +66,7 @@ export const StarBackground = () => {
                 height: Math.random() * 2 + 2,
                 x: Math.random() * 100, 
                 y: Math.random() * 60,
-                animationDuration: Math.random() * 4 + 6,
+                animationDuration: Math.random() * 8 + 10,
                 animationDelay: Math.random() ,
             });
         }
