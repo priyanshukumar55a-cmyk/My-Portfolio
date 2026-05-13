@@ -1,5 +1,5 @@
 import { TypewriterText } from "./TypewriterText"
-import myPhoto from "../assets/my_photo.png"
+import myPhoto from "../assets/my_image.png"
 
 export const HeroSection = () => {
   return (
