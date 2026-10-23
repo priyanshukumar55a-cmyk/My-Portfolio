@@ -30,7 +30,7 @@ export const HeroSection = () => {
             </p>
 
             {/* Button */}
-            <div className="opacity-0 animate-fade-in-delay-3 flex gap-4">
+            <div className="opacity-0 animate-fade-in-delay-3 flex flex-col md:flex-row md:justify-start items-center justify-center gap-4">
               <a
                 href="#projects"
                 className="
